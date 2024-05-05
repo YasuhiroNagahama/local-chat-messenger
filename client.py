@@ -34,9 +34,11 @@ class Client:
         print('\nサーバーアドレス {} から {} バイトのメッセージが送信されました'.format(server_address, len(data)))
         print('サーバー : {}'.format(data_str))
 
+    # サーバーに送信したデータを表示するメソッド
     def display_sent_data(self, data : str) -> None:
         print('\nサーバーにメッセージ「{}」を送信しました'.format(data))
 
+    # サーバーにデータを表示するメソッド
     def sent_data(self) -> None:
         while True:
             # メッセージの入力を求める
