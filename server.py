@@ -4,11 +4,8 @@ from faker import Faker
 
 class Server:
     def __init__(self, server_address) -> None:
-        # 引数として受け取ったサーバーアドレスを代入
         self.server_address: str = server_address
-        # ソケットを定義
         self.sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
-        # fakerを定義
         self.fake: Faker = Faker('jp-JP')
 
     # 同じサーバーアドレスのファイルがある場合に削除するメソッド
@@ -45,9 +42,12 @@ class Server:
     def sent_data(self, client_address) -> None:
         fake_address: str = self.get_fake_address()
         fake_address_bytes : bytes = self.encode_data(fake_address)
-        self.sock.sendto(fake_address_bytes, client_address)
 
-        self.display_sent_data(fake_address)
+        try:
+            self.sock.sendto(fake_address_bytes, client_address)
+            self.display_sent_data(fake_address)
+        except Exception as e:
+            print("エラーが発生しました : ", e)
 
     # クライアントからのデータを受信するメソッド
     def receive_data(self) -> None:

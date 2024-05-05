@@ -36,16 +36,18 @@ class Client:
     def display_sent_data(self, data : str) -> None:
         print('\nサーバーにメッセージ「{}」を送信しました'.format(data))
 
-    # サーバーにデータを表示するメソッド
+    # サーバーにデータを送信するメソッド
     def sent_data(self) -> None:
         while True:
             client_message: str = input("\nメッセージを入力してください : ")
             client_message_bytes: bytes = self.encode_data(client_message)
-            self.sock.sendto(client_message_bytes, self.server_address)
 
-            self.display_sent_data(client_message)
-
-            self.receive_data()
+            try:
+                self.sock.sendto(client_message_bytes, self.server_address)
+                self.display_sent_data(client_message)
+                self.receive_data()
+            except Exception as e:
+                print("エラーが発生しました : ", e)
 
     # サーバーからのデータを受信するメソッド
     def receive_data(self) -> None:
