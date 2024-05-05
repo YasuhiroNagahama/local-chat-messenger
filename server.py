@@ -39,6 +39,7 @@ class Server:
         print('\nクライアントアドレス {} から {} バイトのメッセージが送信されました'.format(client_address, len(data)))
         print('クライアント : {}'.format(data_str))
 
+    # クライアントに送信したデータを表示するメソッド
     def display_sent_data(self, data : str) -> None:
         print('\nクライアントに偽アドレス「{}」を送信しました'.format(data))
 
