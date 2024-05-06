@@ -35,6 +35,17 @@ client.pyを実行すると入力を求められるので、適当な文字を�
 - 適切なコメントを付けました
 - プログラムは ctrl + c で強制終了してください
 
+# Memo
+
+## 参考リンク
+https://envader.plus/article/27
+https://envader.plus/article/208
+https://qiita.com/yunosuken/items/5835b6ba26981c56eeda
+https://qiita.com/Michinosuke/items/0778a5344bdf81488114
+
+## 参考リポジトリ
+https://github.com/Aki158/Local-Chat-Messenger
+
 # Author
 
 * 作成者
