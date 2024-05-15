@@ -10,7 +10,7 @@ local-chat-messenger
 Python
 
 # Installation
-Pythonのインストーラーをダウンロード
+Pythonのインストーラーをダウンロード後、インストール
 
 # Usage
 
